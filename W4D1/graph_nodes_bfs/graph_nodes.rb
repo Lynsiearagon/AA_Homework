@@ -8,9 +8,20 @@ class GraphNode
     end
 
     def bfs(starting_node, target_value)
+        queue = [starting_node]
+        saw = Set.new()
 
+        until queue.empty? 
+            node = queue.shift
+            unless saw.include?(node)
+                return node.value if node.value == target_value
+                saw << node
+                queue += node.neighbors
+            end
+        end
+
+        return nil 
     end
-
 
 end
 

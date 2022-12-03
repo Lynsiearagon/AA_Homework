@@ -1,21 +1,19 @@
 class Stack
 
     def initialize
-        # ivar
+        @stack = []
     end
 
     def push(el)
-        self << el 
+        @stack << el
     end
 
     def pop
-        self.pop 
+        @stack.pop 
     end
 
     def peek
-        self[-1]
+        @stack[-1]
     end
 
 end
-
-puts stack1 = Stack.new
